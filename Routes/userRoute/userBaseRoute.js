@@ -11,6 +11,10 @@ var userRegister = {
     path: '/api/user/register',
     handler: function (request, reply) {
         var payloadData = request.payload;
+        if(!UniversalFunctions.verifyEmailFormat(payloadData.emailId)){
+            reply(UniversalFunctions.sendError(UniversalFunctions.CONFIG.APP_CONSTANTS.STATUS_MSG.ERROR.INVALID_EMAIL_FORMAT));
+        }
+        else{
             Controller.UserBaseController.createUser(payloadData, function (err, data) {
                 if (err) {
                     reply(UniversalFunctions.sendError(err));
@@ -18,6 +22,7 @@ var userRegister = {
                     reply(UniversalFunctions.sendSuccess(UniversalFunctions.CONFIG.APP_CONSTANTS.STATUS_MSG.SUCCESS.CREATED, data)).code(201)
                 }
             });
+        }
     },
     config: {
         description: 'Register a new user',
@@ -26,7 +31,7 @@ var userRegister = {
             payload: {
                 first_name: Joi.string().regex(/^[a-zA-Z ]+$/).trim().min(2).required(),
                 last_name: Joi.string().regex(/^[a-zA-Z ]+$/).trim().min(2).required(),
-                userName: Joi.string().required(),
+                emailId: Joi.string().required(),
                 phoneNumber: Joi.string().regex(/^[0-9]+$/).min(5).required(),
                 countryCode: Joi.string().max(4).required().trim(),
                 password: Joi.string().optional().min(5).allow(''),

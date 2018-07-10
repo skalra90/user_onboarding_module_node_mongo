@@ -8,8 +8,7 @@ var Config = require('../Config');
 var user = new Schema({
     first_name: {type: String, trim: true, required: true},
     last_name: {type: String, trim: true, required: true},
-    userName: {type: String, trim: true, required: true,unique: true},
-    sortName: {type: String, trim: true, required: true,unique: true},
+    emailId: {type: String, trim: true, required: true},
     accessToken: {type: String, trim: true, index: true, unique: true, sparse: true},
     facebookId:{type: String, trim: true},
     phoneNumber: {type: String, required: true, trim: true, index: true, unique: true, min: 5, max: 15},

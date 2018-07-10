@@ -1,10 +1,10 @@
 'use strict';
 var s3BucketCredentials = {
-    "bucket": "prosimple",
-    "accessKeyId": "AKIAIPFSSTK4UKWGCK5A",
-    "secretAccessKey": "YPZo5YnQpkzO/dPhJdkKvT+Sg0ogFCfpH4FCxYAV",
+    "bucket": "samplebucketname",
+    "accessKeyId": "accesskeyId",
+    "secretAccessKey": "secretkey",
     //"s3URL": "https://s3.amazonaws.com/booholapp/",
-    "s3URL": "http://prosimple.s3.amazonaws.com",
+    "s3URL": "http://bucketname.s3.amazonaws.com",
     "folder": {
         "profilePicture": "profilePicture",
         "thumb": "thumb",

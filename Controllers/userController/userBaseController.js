@@ -18,7 +18,6 @@ var createUser = function (payloadData,callback) {
     console.log('payload Data:', payloadData);
     if (dataToSave.password)
         dataToSave.password = UniversalFunctions.CryptData(dataToSave.password);
-    dataToSave.sortName = payloadData.userName.toUpperCase();
     var customerData = null;
     var dataToUpdate = {};
     var appVersion = null;

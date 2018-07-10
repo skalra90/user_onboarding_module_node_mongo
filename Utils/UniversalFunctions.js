@@ -9,8 +9,9 @@ var CONFIG = require('../Config');
 var Models = require('../Models');
 var randomstring = require("randomstring");
 var validator = require('validator');
-var moment = require('moment');
-require('moment-range');
+var Moment = require('moment');
+var MomentRange = require('moment-range');
+var moment = MomentRange.extendMoment(Moment);
 
 var sendError = function (data) {
     console.trace('ERROR OCCURED ', data)

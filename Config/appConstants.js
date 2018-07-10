@@ -7,8 +7,8 @@
 var SERVER = {
     APP_NAME: 'WebRTC',
     PORTS: {
-        //HAPI: 8000
-        HAPI: 3000
+        HAPI: 8000
+        //HAPI: 3000
     },
     TOKEN_EXPIRATION_IN_MINUTES: 600,
     JWT_SECRET_KEY: 'sUPerSeCuREKeY&^$^&$^%$^%7782348723t4872t34Ends',
@@ -187,6 +187,11 @@ var STATUS_MSG = {
             customMessage : ' Password change request time expired',
             type : 'PASSWORD_CHANGE_REQUEST_EXPIRE'
         },
+        INVALID_EMAIL_FORMAT : {
+            statusCode:400,
+            customMessage : 'Inavlid email format',
+            type : 'INVALID_EMAIL_FORMAT'
+        }
     },
     SUCCESS: {
         DEFAULT: {

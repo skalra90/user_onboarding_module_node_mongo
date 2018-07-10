@@ -62,23 +62,7 @@ server.on('response', function (request) {
     console.log(request.info.remoteAddress + ': ' + request.method.toUpperCase() + ' ' + request.url.path + ' --> ' + request.response.statusCode);
     console.log('Request payload:', request.payload);
 });
-//var FixedCharge = {
-//    fixedCharges: 0
-//};
-//    Service.FixedChargeService.createFixedCharge(FixedCharge, function (err, response) {
-//        if(err){
-//            console.log("Implementation err",err);
-//        }
-//        else{
-//            console.log("Fixed Charge Added Succesfully");
-//        }
-//    });
-//
-//
-//Bootstrap.bootstrapAdmin(function (err) {
-//    if (err)
-//        console.log(err);
-//});
+
 //Start Server
 server.start(function () {
     server.log('info', 'Server running at: ' + server.info.uri);
